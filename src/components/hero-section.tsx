@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Dumbbell } from "lucide-react";
+import { Dumbbell, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export function HeroSection() {
@@ -17,11 +17,15 @@ export function HeroSection() {
                     <Dumbbell className="h-8 w-8" />
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight">MATT KUDA FITNESS</h1>
                 </div>
-                <p className="text-xl md:text-2xl mb-8 text-center max-w-2xl">
+                <p className="text-xl md:text-2xl mb-12 text-center max-w-2xl">
                     Science-based training programs for transforming your physique
                 </p>
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+                <Button
+                    size="lg"
+                    className="bg-red-600 hover:bg-red-700 text-white text-lg py-6 px-8 rounded transition-transform hover:scale-105"
+                >
                     View Programs
+                    <ArrowRight className="ml-2 h-6 w-6" />
                 </Button>
             </div>
         </section>

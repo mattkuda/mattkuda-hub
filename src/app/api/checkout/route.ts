@@ -6,8 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 });
 
 export async function POST(req: NextRequest) {
-    const { programId, price } = await req.json();
-    console.log(programId, price);
+    const { programTitle, price } = await req.json();
     try {
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
@@ -16,19 +15,22 @@ export async function POST(req: NextRequest) {
                     price_data: {
                         currency: 'usd',
                         product_data: {
-                            name: programId,
+                            name: programTitle,
+                            images: ["https://pbs.twimg.com/profile_images/1794742629344649216/DyMPBWVF_400x400.jpg"],
                         },
-                        unit_amount: price * 100, // Stripe expects amounts in cents
+                        unit_amount: price * 100,
                     },
                     quantity: 1,
                 },
             ],
             mode: 'payment',
             success_url: `${req.headers.get('origin')}/success`,
-            cancel_url: `${req.headers.get('origin')}/cancel`,
+            cancel_url: `${req.headers.get('origin')}`,
+            billing_address_collection: 'required',
+            allow_promotion_codes: true
         });
 
-        return NextResponse.json({ url: session.url, sessionId: session.id });
+        return NextResponse.json({ url: session.url });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'Failed to create session' });
