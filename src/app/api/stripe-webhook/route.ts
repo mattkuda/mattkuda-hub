@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import mailgun from 'mailgun-js';
 import { buffer } from 'node:stream/consumers';
+import path from 'path';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
     apiVersion: '2024-10-28.acacia',
@@ -11,6 +12,9 @@ const mg = mailgun({
     apiKey: process.env.MAILGUN_API_KEY as string,
     domain: process.env.MAILGUN_DOMAIN as string,
 });
+
+// Get the absolute path to the PDF file
+const pdfPath = path.join(process.cwd(), 'public', 'test.pdf');
 
 export async function POST(req: NextRequest) {
     console.log('Stripe webhook POST request received');
@@ -37,14 +41,26 @@ export async function POST(req: NextRequest) {
 
         if (event.type === 'checkout.session.completed') {
             const session = event.data.object as Stripe.Checkout.Session;
+            console.log('Processing completed checkout:', session.id);
+
+            // Get email from customer_details instead of customer_email
+            const customerEmail = session.customer_details?.email;
+
+            if (!customerEmail) {
+                console.error('No customer email found in session');
+                return NextResponse.json(
+                    { error: 'No customer email found' },
+                    { status: 400 }
+                );
+            }
 
             // Send the email with the PDF attachment
             const data = {
                 from: 'Matt Kuda Fitness <programs@mattkuda.com>',
-                to: session.customer_email,
+                to: customerEmail,
                 subject: 'Your Purchased Fitness Program',
                 text: 'Thank you for your purchase! Please find your program attached.',
-                attachment: 'path/to/your/fitness-program.pdf',
+                attachment: pdfPath,
             };
 
             try {
@@ -55,7 +71,11 @@ export async function POST(req: NextRequest) {
                     });
                 });
 
-                return NextResponse.json({ message: 'Email sent successfully' });
+                return NextResponse.json({
+                    message: 'Email sent successfully',
+                    customerEmail,
+                    sessionId: session.id
+                });
             } catch (error) {
                 console.error('Error sending email:', error);
                 return NextResponse.json(
