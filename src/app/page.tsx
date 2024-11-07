@@ -1,6 +1,5 @@
 'use client'
 
-import Link from "next/link"
 import { Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,6 +14,7 @@ import { HeroSection } from "@/components/hero-section"
 import Image from "next/image";
 import { loadStripe } from "@stripe/stripe-js"
 import Header from '@/components/header';
+import { Footer } from "@/components/footer";
 
 interface Program {
   id: string
@@ -113,7 +113,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gray-100 p-4">
+      <main className="min-h-screen bg-zinc-100 p-4">
         <HeroSection />
         <section className="py-12 md:py-24">
           <div className="container">
@@ -211,24 +211,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-      <footer className="border-t py-6">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-center text-sm leading-loose text-muted-foreground">
-            © 2024 Matt Kuda Fitness. All rights reserved.
-          </p>
-          <nav className="flex gap-4">
-            <Link href="#" className="text-sm text-muted-foreground underline-offset-4 hover:underline">
-              Terms
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground underline-offset-4 hover:underline">
-              Privacy
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground underline-offset-4 hover:underline">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
