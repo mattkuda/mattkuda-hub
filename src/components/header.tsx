@@ -10,7 +10,7 @@ import {
 const Header = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between">
+            <div className="container  mx-auto max-w-7xl flex h-16 items-center justify-between">
                 {/* Left side - Title */}
                 <Link href="/" className="flex items-center space-x-2">
                     <span className="text-xl font-bold">MATT KUDA FITNESS</span>
@@ -44,7 +44,7 @@ const Header = () => {
                     </Sheet>
                 </div>
             </div>
-        </header>
+        </header >
     );
 };
 

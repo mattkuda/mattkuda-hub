@@ -1,3 +1,5 @@
+'use client';
+
 import { Star } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -8,25 +10,36 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-
-interface Program {
-    id: string;
-    title: string;
-    description: string;
-    price: number;
-    difficulty: string;
-    rating: number;
-    image: string;
-}
+import { Program } from "@/types/program";
+import { handleProgramPurchase } from "@/lib/stripe-utils";
+import { useRouter } from "next/navigation";
 
 interface ProgramCardProps {
     program: Program;
-    onBuyNow: (program: Program) => void;
+    showBuyButton?: boolean;
 }
 
-export function ProgramCard({ program, onBuyNow }: ProgramCardProps) {
+export function ProgramCard({ program, showBuyButton = true }: ProgramCardProps) {
+    const router = useRouter();
+
+    const handleBuyClick = async (e: React.MouseEvent) => {
+        e.stopPropagation();
+        try {
+            await handleProgramPurchase(program);
+        } catch (error) {
+            console.error('Purchase failed:', error);
+        }
+    };
+
+    const handleViewClick = () => {
+        router.push(`/programs/${program.id}`);
+    };
+
     return (
-        <Card className="overflow-hidden">
+        <Card
+            className="overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
+            onClick={handleViewClick}
+        >
             <CardHeader className="p-0">
                 <Image
                     src={program.image}
@@ -56,9 +69,9 @@ export function ProgramCard({ program, onBuyNow }: ProgramCardProps) {
             <CardFooter className="p-4 pt-0">
                 <div className="flex w-full items-center justify-between">
                     <span className="text-lg font-bold">${program.price}</span>
-                    <div className="flex gap-2">
-                        <Button onClick={() => onBuyNow(program)}>Buy Now</Button>
-                    </div>
+                    {showBuyButton && (
+                        <Button onClick={handleBuyClick}>Buy Now</Button>
+                    )}
                 </div>
             </CardFooter>
         </Card>

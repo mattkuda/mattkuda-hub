@@ -1,12 +1,8 @@
-import { Program } from "@/types/program";
 import { ProgramCard } from "./program-card";
+import { getAllPrograms } from "../lib/programs";
 
-interface ProgramsSectionProps {
-    programs: Program[];
-    onBuyNow: (program: Program) => void;
-}
-
-export function ProgramsSection({ programs, onBuyNow }: ProgramsSectionProps) {
+export function ProgramsSection() {
+    const programs = getAllPrograms();
     return (
         <section className="py-12 md:py-24">
             <div className="container">
@@ -18,7 +14,6 @@ export function ProgramsSection({ programs, onBuyNow }: ProgramsSectionProps) {
                         <ProgramCard
                             key={program.id}
                             program={program}
-                            onBuyNow={onBuyNow}
                         />
                     ))}
                 </div>

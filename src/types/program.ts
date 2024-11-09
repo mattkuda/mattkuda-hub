@@ -6,4 +6,5 @@ export interface Program {
     difficulty: string;
     rating: number;
     image: string;
+    type: "training" | "nutrition";
 } 
