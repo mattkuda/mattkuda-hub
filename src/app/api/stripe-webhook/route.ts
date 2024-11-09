@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import mailgun from 'mailgun-js';
 import { buffer } from 'node:stream/consumers';
-import path from 'path';
+import { Storage } from '@google-cloud/storage';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
     apiVersion: '2024-10-28.acacia',
@@ -13,21 +13,18 @@ const mg = mailgun({
     domain: process.env.MAILGUN_DOMAIN as string,
 });
 
-// Get the absolute path to the PDF file
-const pdfPath = path.join(process.cwd(), 'public', 'test.pdf');
+const storage = new Storage({
+    projectId: process.env.GCLOUD_PROJECT_ID,
+    keyFilename: process.env.GCLOUD_KEYFILE_PATH,
+});
+
+const bucketName = process.env.GCLOUD_STORAGE_BUCKET as string;
 
 export async function POST(req: NextRequest) {
-    console.log('Stripe webhook POST request received');
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const body = await buffer(req.body as any);
     const sig = req.headers.get('stripe-signature');
 
-    console.log('timestamp', new Date().toISOString());
-    console.log('sig', sig);
-    console.log('STRIPE_WEBHOOK_SECRET', process.env.STRIPE_WEBHOOK_SECRET);
-    console.log('STRIPE_SECRET_KEY', process.env.STRIPE_SECRET_KEY);
-    // console.log('body', body);
     if (!sig) {
         return NextResponse.json({ error: 'No signature' }, { status: 400 });
     }
@@ -41,9 +38,7 @@ export async function POST(req: NextRequest) {
 
         if (event.type === 'checkout.session.completed') {
             const session = event.data.object as Stripe.Checkout.Session;
-            console.log('Processing completed checkout:', session.id);
 
-            // Get email from customer_details instead of customer_email
             const customerEmail = session.customer_details?.email;
 
             if (!customerEmail) {
@@ -53,14 +48,55 @@ export async function POST(req: NextRequest) {
                     { status: 400 }
                 );
             }
+            // TODO: Make this dynamic
+            const fileName = 'test.pdf';
+            const file = storage.bucket(bucketName).file(fileName);
 
-            // Send the email with the PDF attachment
+            console.log('Attempting to download from GCS:', {
+                bucket: bucketName,
+                fileName: fileName
+            });
+
+            // Check if file exists
+            const [exists] = await file.exists();
+            console.log('File exists in GCS:', exists);
+
+            if (!exists) {
+                throw new Error('File does not exist in bucket');
+            }
+
+            // Get file metadata
+            const [metadata] = await file.getMetadata();
+            console.log('File metadata:', {
+                size: metadata.size,
+                contentType: metadata.contentType,
+                updated: metadata.updated
+            });
+
+            // Download with specific options
+            const [fileBuffer] = await file.download({
+                validation: false
+            });
+
+            console.log('Downloaded file buffer size:', fileBuffer.length);
+            console.log('First few bytes:', fileBuffer.slice(0, 20)); // Let's see what we actually got
+
+            if (fileBuffer.length < 1000) { // PDFs are typically larger than 1KB
+                throw new Error(`File seems too small: ${fileBuffer.length} bytes`);
+            }
+
+            const attachment = new mg.Attachment({
+                data: fileBuffer,
+                filename: fileName,
+                contentType: 'application/pdf',
+            });
+
             const data = {
                 from: 'Matt Kuda Fitness <programs@mattkuda.com>',
                 to: customerEmail,
-                subject: 'Your Purchased Fitness Program',
-                text: 'Thank you for your purchase! Please find your program attached.',
-                attachment: pdfPath,
+                subject: 'Your Purchased Fitness Program TEST',
+                text: 'Thank you for your purchase! Please find your program attached. TEST',
+                attachment: attachment
             };
 
             try {
