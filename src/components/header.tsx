@@ -20,12 +20,11 @@ const Header = () => {
                 <div className="flex items-center">
                     {/* Desktop Navigation */}
                     <nav className="hidden items-center space-x-6 md:flex">
-                        <Link href="/programs" className="text-sm font-medium">Programs</Link>
-                        <Link href="/nutrition" className="text-sm font-medium">Nutrition</Link>
-                        <Link href="/transformations" className="text-sm font-medium">Transformations</Link>
-                        <Link href="/about" className="text-sm font-medium">About</Link>
+                        <Link href="/programs" className="text-sm font-medium">Training Programs</Link>
+                        <Link href="/portfolio" className="text-sm font-medium">Portfolio</Link>
+                        <Link href="/content" className="text-sm font-medium">Content</Link>
+                        <Link href="/aboutme" className="text-sm font-medium">About Me</Link>
                     </nav>
-
                     {/* Mobile Menu Button */}
                     <Sheet>
                         <SheetTrigger asChild>
@@ -35,10 +34,10 @@ const Header = () => {
                         </SheetTrigger>
                         <SheetContent side="right">
                             <nav className="flex flex-col gap-4">
-                                <Link href="/programs" className="text-lg font-semibold">Programs</Link>
-                                <Link href="/nutrition" className="text-lg font-semibold">Nutrition</Link>
-                                <Link href="/transformations" className="text-lg font-semibold">Transformations</Link>
-                                <Link href="/about" className="text-lg font-semibold">About</Link>
+                                <Link href="/programs" className="text-lg font-semibold">Training Programs</Link>
+                                <Link href="/portfolio" className="text-lg font-semibold">Portfolio</Link>
+                                <Link href="/content" className="text-lg font-semibold">Content</Link>
+                                <Link href="/aboutme" className="text-lg font-semibold">About Me</Link>
                             </nav>
                         </SheetContent>
                     </Sheet>
