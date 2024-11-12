@@ -15,7 +15,7 @@ export function HeroSection() {
             <div className="container absolute inset-0 flex flex-col items-center justify-center text-white">
                 <div className="flex items-center gap-2 mb-4">
                     <Dumbbell className="h-8 w-8" />
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">MATT KUDA FITNESS</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">MATT KUDA</h1>
                 </div>
                 <p className="text-xl md:text-2xl mb-12 text-center max-w-2xl">
                     Science-based training programs for transforming your physique

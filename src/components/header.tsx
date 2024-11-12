@@ -13,7 +13,7 @@ const Header = () => {
             <div className="container  mx-auto max-w-7xl flex h-16 items-center justify-between">
                 {/* Left side - Title */}
                 <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-xl font-bold">MATT KUDA FITNESS</span>
+                    <span className="text-xl font-bold">MATT KUDA</span>
                 </Link>
 
                 {/* Right side - Navigation */}
@@ -21,7 +21,7 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden items-center space-x-6 md:flex">
                         <Link href="/programs" className="text-sm font-medium">Training Programs</Link>
-                        <Link href="/portfolio" className="text-sm font-medium">Portfolio</Link>
+                        <Link href="/portfolio" className="text-sm font-medium">Dev Portfolio</Link>
                         <Link href="/content" className="text-sm font-medium">Content</Link>
                         <Link href="/aboutme" className="text-sm font-medium">About Me</Link>
                     </nav>
@@ -35,7 +35,7 @@ const Header = () => {
                         <SheetContent side="right">
                             <nav className="flex flex-col gap-4">
                                 <Link href="/programs" className="text-lg font-semibold">Training Programs</Link>
-                                <Link href="/portfolio" className="text-lg font-semibold">Portfolio</Link>
+                                <Link href="/portfolio" className="text-lg font-semibold">Dev Portfolio</Link>
                                 <Link href="/content" className="text-lg font-semibold">Content</Link>
                                 <Link href="/aboutme" className="text-lg font-semibold">About Me</Link>
                             </nav>
