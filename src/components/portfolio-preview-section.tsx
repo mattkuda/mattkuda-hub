@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { ExternalLink, Code } from "lucide-react";
+import { ExternalLink, Code, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -72,6 +72,9 @@ export function PortfolioPreviewSection() {
                             </Button>
                         </div>
                     </div>
+                </div>
+                <div className="flex justify-end">
+                    <Button className="mt-12">View Portfolio<ArrowRight className="w-4 h-4" /></Button>
                 </div>
             </div>
         </section>
