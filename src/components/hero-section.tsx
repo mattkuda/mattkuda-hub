@@ -10,7 +10,12 @@ const HeroSection = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Newsletter signup:', { email });
+
+        const subscribeUrl = `https://mattkuda.substack.com/subscribe?email=${encodeURIComponent(email)}`;
+
+        window.open(subscribeUrl, '_blank', 'noopener,noreferrer');
+
+        setEmail('');
     };
 
     return (
