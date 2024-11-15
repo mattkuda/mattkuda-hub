@@ -2,17 +2,20 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 
 export default function NewsletterSection() {
     const [email, setEmail] = useState('');
-    const [consent, setConsent] = useState(false);
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // TODO: Implement newsletter signup logic
-        console.log('Newsletter signup:', { email, consent });
+
+        const subscribeUrl = `https://mattkuda.substack.com/subscribe?email=${encodeURIComponent(email)}`;
+
+        window.open(subscribeUrl, '_blank', 'noopener,noreferrer');
+
+        setEmail('');
     };
 
     return (
@@ -35,27 +38,11 @@ export default function NewsletterSection() {
                                 className="h-12"
                             />
                         </div>
-
-                        <div className="flex items-center gap-2">
-                            <Checkbox
-                                id="consent"
-                                checked={consent}
-                                onCheckedChange={(checked) => setConsent(checked as boolean)}
-                                required
-                            />
-                            <label
-                                htmlFor="consent"
-                                className="text-sm text-zinc-600"
-                            >
-                                I consent to being added to Matt Kuda&apos;s mailing list
-                            </label>
-                        </div>
-
                         <Button
                             type="submit"
                             size="lg"
                             className="w-full"
-                            disabled={!email || !consent}
+                            disabled={!email}
                         >
                             Subscribe
                         </Button>
