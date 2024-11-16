@@ -8,18 +8,16 @@ import SocialLinksSection from "../components/social-links-sections";
 import { PortfolioPreviewSection } from "../components/portfolio-preview-section";
 
 export default function HomePage() {
-
   return (
     <>
-      <main className="min-h-screen bg-zinc-100 p-4">
-        <div className="container mx-auto max-w-7xl">
+      <main className="min-h-screen">
+        <div className="container mx-auto max-w-6xl">
           <HeroSection />
-          {/* <NewsletterSection /> */}
           <ProgramsSection />
-          <PortfolioPreviewSection />
           <AboutSection />
-          <NewsletterSection />
+          <PortfolioPreviewSection />
           <SocialLinksSection />
+          <NewsletterSection />
         </div>
       </main>
     </>

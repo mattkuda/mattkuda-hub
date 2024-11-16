@@ -34,15 +34,12 @@ export default function NewsletterSection() {
                                 placeholder="Your email address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                required
-                                className="h-12"
                             />
                         </div>
                         <Button
                             type="submit"
                             size="lg"
-                            className="w-full"
-                            disabled={!email}
+                            className="w-full bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-white border-0 hover:opacity-90"
                         >
                             Subscribe
                         </Button>

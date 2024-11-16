@@ -1,80 +1,78 @@
 import { Button } from "./ui/button";
-import { ExternalLink, Code, ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { PortfolioCard } from "./portfolio-card";
+
+const projects = [
+    {
+        title: "TabaFit",
+        description: "A brief description of the project and what technologies were used to build it.",
+        image: "/program-1.jpg",
+        demoUrl: "https://tabafit.com",
+        codeUrl: "https://github.com/mattkuda/tabafit",
+    },
+    {
+        title: "Betcha Sports",
+        description: "A brief description of the project and what technologies were used to build it.",
+        image: "/program-2.jpg",
+        codeUrl: "https://github.com/mattkuda/betcha",
+    },
+];
 
 export function PortfolioPreviewSection() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "100px" });
+
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.3
+            }
+        }
+    };
+
+    const item = {
+        hidden: { opacity: 0, y: 20 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+
     return (
-        <section className="py-12 md:py-24">
+        <section className="py-12 md:py-24" ref={ref}>
             <div className="container">
-                <h2 className="mb-12 text-center text-3xl font-bold">
+                <h2 className="mb-4 text-center text-3xl font-bold">
                     Developer Portfolio
                 </h2>
-                {/* Project 1 */}
-                <div className="grid md:grid-cols-2 gap-8 mb-12">
-                    <div className="relative aspect-video rounded-lg overflow-hidden">
-                        <Image
-                            src="/program-1.jpg"
-                            alt="Project 1 preview"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold mb-4">TabaFit</h3>
-                        <p className="text-muted-foreground mb-6">
-                            A brief description of the project and what technologies were used to build it.
-                        </p>
-                        <div className="flex gap-4">
-                            <Button asChild>
-                                <Link href="https://demo-url.com" target="_blank">
-                                    Try it out
-                                    <ExternalLink className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                            <Button variant="outline" asChild>
-                                <Link href="https://github.com/username/repo" target="_blank">
-                                    View code
-                                    <Code className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Project 2 */}
-                <div className="grid md:grid-cols-2 gap-8">
-                    <div className="relative aspect-video rounded-lg overflow-hidden">
-                        <Image
-                            src="/program-2.jpg"
-                            alt="Project 2 preview"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold mb-4">Betcha Sports</h3>
-                        <p className="text-muted-foreground mb-6">
-                            A brief description of the project and what technologies were used to build it.
-                        </p>
-                        <div className="flex gap-4">
-                            <Button asChild>
-                                <Link href="https://demo-url.com" target="_blank">
-                                    Try it out
-                                    <ExternalLink className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                            <Button variant="outline" asChild>
-                                <Link href="https://github.com/username/repo" target="_blank">
-                                    View code
-                                    <Code className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-end">
-                    <Button className="mt-12">View Portfolio<ArrowRight className="w-4 h-4" /></Button>
+                <p className="mb-8 text-lg text-center text-zinc-600">
+                    Applications I&apos;ve built and shipped to the public
+                </p>
+                <motion.div
+                    variants={container}
+                    initial="hidden"
+                    animate={isInView ? "show" : "hidden"}
+                    className="space-y-12"
+                >
+                    {projects.map((project) => (
+                        <motion.div key={project.title} variants={item}>
+                            <PortfolioCard {...project} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+                <div className="flex justify-center">
+                    <Button variant="outline" className="mt-12">
+                        View Full Portfolio
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
                 </div>
             </div>
         </section>

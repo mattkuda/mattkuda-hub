@@ -8,7 +8,8 @@ const AboutSection = () => {
                 <p className="text-xl mb-6">
                     I build things that combine my love for tech and fitness, helping people create better habits and lead intentional lives.
                 </p>
-                <Button size="lg">Read My Story</Button>
+                <Button className="bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-white border-0 hover:opacity-90"
+                    size="lg">Read My Story</Button>
             </div>
         </section>
     )

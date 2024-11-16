@@ -70,7 +70,12 @@ export function ProgramCard({ program, showBuyButton = true }: ProgramCardProps)
                 <div className="flex w-full items-center justify-between">
                     <span className="text-lg font-bold">${program.price}</span>
                     {showBuyButton && (
-                        <Button onClick={handleBuyClick}>Buy Now</Button>
+                        <Button
+                            className="bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-white border-0 hover:opacity-90"
+                            onClick={handleBuyClick}
+                        >
+                            Buy Now
+                        </Button>
                     )}
                 </div>
             </CardFooter>
