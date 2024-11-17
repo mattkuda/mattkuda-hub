@@ -14,7 +14,6 @@ export default function ProgramsPage() {
                             <ProgramCard
                                 key={program.id}
                                 program={program}
-                                showBuyButton={false}
                             />
                         ))}
                     </div>

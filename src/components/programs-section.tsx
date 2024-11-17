@@ -1,5 +1,5 @@
 import { ProgramCard } from "./program-card";
-import { getAllPrograms } from "../lib/programs";
+import { getTrainingPrograms } from "../lib/programs";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import { useRef } from "react";
 export function ProgramsSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
-    const programs = getAllPrograms();
+    const programs = getTrainingPrograms(4);
 
     const container = {
         hidden: { opacity: 0 },
