@@ -6,7 +6,7 @@ export function Footer() {
         <footer className="border-t py-6 bg-zinc-50">
             <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
                 <p className="text-center text-sm leading-loose text-zinc-600">
-                    © 2024 Matt Kuda Fitness. All rights reserved.
+                    © 2024 Matt Kuda. All rights reserved.
                 </p>
                 <div className="flex items-center gap-6">
                     {/* Legal Links */}

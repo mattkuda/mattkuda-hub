@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -69,9 +70,10 @@ export function PortfolioPreviewSection() {
                     ))}
                 </motion.div>
                 <div className="flex justify-center">
-                    <Button variant="outline" className="mt-12">
-                        View Full Portfolio
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                    <Button asChild variant="outline" className="mt-12">
+                        <Link href="/portfolio">
+                            View Full Portfolio <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
                     </Button>
                 </div>
             </div>

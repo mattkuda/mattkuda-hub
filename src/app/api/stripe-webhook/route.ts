@@ -92,7 +92,7 @@ export async function POST(req: NextRequest) {
             });
 
             const data = {
-                from: 'Matt Kuda Fitness <programs@mattkuda.com>',
+                from: 'Matt Kuda <programs@mattkuda.com>',
                 to: customerEmail,
                 subject: 'Your Purchased Fitness Program TEST',
                 text: 'Thank you for your purchase! Please find your program attached. TEST',

@@ -1,3 +1,5 @@
+'use client';
+
 import { ProgramCard } from "./program-card";
 import { getTrainingPrograms } from "../lib/programs";
 import { Button } from "./ui/button";
@@ -5,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 export function ProgramsSection() {
     const ref = useRef(null);
@@ -50,8 +53,10 @@ export function ProgramsSection() {
                     ))}
                 </motion.div>
                 <div className="flex justify-center">
-                    <Button variant="outline" className="mt-12">
-                        View All Programs <ArrowRight className="w-4 h-4" />
+                    <Button asChild variant="outline" className="mt-12">
+                        <Link href="/programs">
+                            View All Programs <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
                     </Button>
                 </div>
             </div>

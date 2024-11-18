@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-
+import Link from "next/link"
 const AboutSection = () => {
     return (
         <section className="bg-muted py-12">
@@ -9,7 +9,11 @@ const AboutSection = () => {
                     I build things that combine my love for tech and fitness, helping people create better habits and lead intentional lives.
                 </p>
                 <Button className="bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-white border-0 hover:opacity-90"
-                    size="lg">Read My Story</Button>
+                    size="lg">
+                    <Link href="/aboutme">
+                        Read My Story
+                    </Link>
+                </Button>
             </div>
         </section>
     )
