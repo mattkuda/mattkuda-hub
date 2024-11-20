@@ -25,7 +25,7 @@ const HeroSection = () => {
                     Hi, I'm Matt Kuda —
                 </h1>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    The Healthy Developer.
+                    The Healthy Dev.
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8">
                     Through tech and fitness, I'm on a mission to inspire healthier lives, documenting the journey along the way.
