@@ -22,8 +22,8 @@ const Header = () => {
                     <nav className="hidden items-center space-x-6 md:flex">
                         <Link href="/programs" className="text-sm font-medium">Training Programs</Link>
                         <Link href="/portfolio" className="text-sm font-medium">Dev Portfolio</Link>
-                        <Link href="/content" className="text-sm font-medium">Content</Link>
                         <Link href="/aboutme" className="text-sm font-medium">About Me</Link>
+                        <Link href="/content" className="text-sm font-medium">Content</Link>
                     </nav>
                     {/* Mobile Menu Button */}
                     <Sheet>
@@ -36,8 +36,8 @@ const Header = () => {
                             <nav className="flex flex-col gap-4">
                                 <Link href="/programs" className="text-lg font-semibold">Training Programs</Link>
                                 <Link href="/portfolio" className="text-lg font-semibold">Dev Portfolio</Link>
-                                <Link href="/content" className="text-lg font-semibold">Content</Link>
                                 <Link href="/aboutme" className="text-lg font-semibold">About Me</Link>
+                                <Link href="/content" className="text-lg font-semibold">Content</Link>
                             </nav>
                         </SheetContent>
                     </Sheet>

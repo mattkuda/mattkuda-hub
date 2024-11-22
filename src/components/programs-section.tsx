@@ -36,7 +36,7 @@ export function ProgramsSection() {
                     Training Programs
                 </h2>
                 <p className="mb-8 text-lg text-center text-zinc-600">
-                    Transform your fitness journey with our science-based training programs
+                    Transform your fitness journey with my hand-crafted training programs
                 </p>
                 <motion.div
                     className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
