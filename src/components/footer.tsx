@@ -21,7 +21,6 @@ export function Footer() {
                             Contact
                         </Link>
                     </nav>
-
                     {/* Social Media Icons */}
                     <div className="flex items-center gap-4 border-l border-zinc-200 pl-6">
                         <Link href="https://twitter.com/mattkuda" target="_blank" rel="noopener noreferrer"

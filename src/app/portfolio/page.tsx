@@ -1,13 +1,14 @@
-import { Button } from "./ui/button";
+'use client'
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { PortfolioCard } from "./portfolio-card";
+import { PortfolioCard } from "@/components/portfolio-card";
 import { portfolioProjects } from "@/lib/portfolio";
 
-export function PortfolioPreviewSection() {
+export default function PortfolioPage() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "100px" });
 
