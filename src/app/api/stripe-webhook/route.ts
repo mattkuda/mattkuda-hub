@@ -73,15 +73,14 @@ export async function POST(req: NextRequest) {
                 updated: metadata.updated
             });
 
-            // Download with specific options
             const [fileBuffer] = await file.download({
                 validation: false
             });
 
             console.log('Downloaded file buffer size:', fileBuffer.length);
-            console.log('First few bytes:', fileBuffer.slice(0, 20)); // Let's see what we actually got
+            console.log('First few bytes:', fileBuffer.slice(0, 20));
 
-            if (fileBuffer.length < 1000) { // PDFs are typically larger than 1KB
+            if (fileBuffer.length < 1000) {
                 throw new Error(`File seems too small: ${fileBuffer.length} bytes`);
             }
 

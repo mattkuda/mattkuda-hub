@@ -7,11 +7,12 @@ interface PortfolioProject {
     title: string;
     description: string;
     image: string;
+    technologies: string[];
     demoUrl?: string;
     codeUrl?: string;
 }
 
-export function PortfolioCard({ title, description, image, demoUrl, codeUrl }: PortfolioProject) {
+export function PortfolioCard({ title, description, image, demoUrl, codeUrl, technologies }: PortfolioProject) {
     return (
         <div className="grid md:grid-cols-2 gap-8">
             <div className="relative aspect-video rounded-lg overflow-hidden">
@@ -19,7 +20,7 @@ export function PortfolioCard({ title, description, image, demoUrl, codeUrl }: P
                     src={image}
                     alt={`${title} preview`}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                 />
             </div>
             <div className="flex flex-col justify-center">
@@ -27,6 +28,16 @@ export function PortfolioCard({ title, description, image, demoUrl, codeUrl }: P
                 <p className="text-muted-foreground mb-6">
                     {description}
                 </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {technologies.map((tech) => (
+                        <span
+                            key={tech}
+                            className="px-3 py-1 bg-zinc-200 rounded-full text-sm text-zinc-800"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
                 <div className="flex gap-4">
                     {demoUrl && (
                         <Button

@@ -7,7 +7,7 @@ export default function ProgramsPage() {
         <section className="py-12 md:py-24">
             <div className="container">
                 <h2 className="mb-4 text-center text-3xl font-bold">
-                    Developer Portfolio
+                    Programs
                 </h2>
                 <p className="mb-8 text-lg text-center text-zinc-600">
                     Transform your fitness journey with my hand-crafted training programs

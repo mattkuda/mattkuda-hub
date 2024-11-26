@@ -1,14 +1,11 @@
 'use client'
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { PortfolioCard } from "@/components/portfolio-card";
 import { portfolioProjects } from "@/lib/portfolio";
 
-export default function PortfolioPage() {
+export default function ProjectsPage() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "100px" });
 
@@ -38,7 +35,7 @@ export default function PortfolioPage() {
         <section className="py-12 md:py-24" ref={ref}>
             <div className="container">
                 <h2 className="mb-4 text-center text-3xl font-bold">
-                    Developer Portfolio
+                    Projects
                 </h2>
                 <p className="mb-8 text-lg text-center text-zinc-600">
                     Applications I&apos;ve built and shipped to the public
@@ -55,13 +52,6 @@ export default function PortfolioPage() {
                         </motion.div>
                     ))}
                 </motion.div>
-                <div className="flex justify-center">
-                    <Button asChild variant="outline" className="mt-12">
-                        <Link href="/portfolio">
-                            View Full Portfolio <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                    </Button>
-                </div>
             </div>
         </section>
     );

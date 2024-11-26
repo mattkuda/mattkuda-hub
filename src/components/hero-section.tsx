@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { useState } from 'react'
+import { AnimatedEmojiSequence } from './animated-emoji-sequence';
+
 
 const HeroSection = () => {
     const [email, setEmail] = useState('');
@@ -24,14 +26,15 @@ const HeroSection = () => {
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-transparent bg-clip-text">
                     Hi, I'm Matt Kuda —
                 </h1>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    The Healthy Dev.
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-2">
+                    The Healthy Dev
+                    <AnimatedEmojiSequence />
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8">
                     Through tech and fitness, I'm on a mission to inspire healthier lives, documenting the journey along the way.
                 </p>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                    Join my newsletter to get the latest updates each month.
+                    Join my newsletter to get the latest updates each week.
                 </p>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <Input

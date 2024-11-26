@@ -20,8 +20,8 @@ const Header = () => {
                 <div className="flex items-center">
                     {/* Desktop Navigation */}
                     <nav className="hidden items-center space-x-6 md:flex">
-                        <Link href="/programs" className="text-sm font-medium">Training Programs</Link>
-                        <Link href="/portfolio" className="text-sm font-medium">Dev Portfolio</Link>
+                        <Link href="/programs" className="text-sm font-medium">Programs</Link>
+                        <Link href="/projects" className="text-sm font-medium">Projects</Link>
                         <Link href="/aboutme" className="text-sm font-medium">About Me</Link>
                         <Link href="/content" className="text-sm font-medium">Content</Link>
                     </nav>
@@ -34,8 +34,8 @@ const Header = () => {
                         </SheetTrigger>
                         <SheetContent side="right">
                             <nav className="flex flex-col gap-4">
-                                <Link href="/programs" className="text-lg font-semibold">Training Programs</Link>
-                                <Link href="/portfolio" className="text-lg font-semibold">Dev Portfolio</Link>
+                                <Link href="/programs" className="text-lg font-semibold">Programs</Link>
+                                <Link href="/portfolio" className="text-lg font-semibold">Projects</Link>
                                 <Link href="/aboutme" className="text-lg font-semibold">About Me</Link>
                                 <Link href="/content" className="text-lg font-semibold">Content</Link>
                             </nav>

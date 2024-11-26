@@ -24,7 +24,7 @@ export default function NewsletterSection() {
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="mb-4 text-3xl font-bold">Stay Updated</h2>
                     <p className="mb-8 text-zinc-600">
-                        Sign up for my newsletter to receive tech news, fitness tips, and the content I find most interesting each month.
+                        Sign up for my newsletter to receive tech news, fitness tips, and the content I find most interesting each week.
                     </p>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">

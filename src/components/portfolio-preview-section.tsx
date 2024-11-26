@@ -37,7 +37,7 @@ export function PortfolioPreviewSection() {
         <section className="py-12 md:py-24" ref={ref}>
             <div className="container">
                 <h2 className="mb-4 text-center text-3xl font-bold">
-                    Developer Portfolio
+                    Projects
                 </h2>
                 <p className="mb-8 text-lg text-center text-zinc-600">
                     Applications I&apos;ve built and shipped to the public
@@ -48,7 +48,7 @@ export function PortfolioPreviewSection() {
                     animate={isInView ? "show" : "hidden"}
                     className="space-y-12"
                 >
-                    {portfolioProjects.map((project) => (
+                    {portfolioProjects.slice(0, 2).map((project) => (
                         <motion.div key={project.title} variants={item}>
                             <PortfolioCard {...project} />
                         </motion.div>
@@ -57,7 +57,7 @@ export function PortfolioPreviewSection() {
                 <div className="flex justify-center">
                     <Button asChild variant="outline" className="mt-12">
                         <Link href="/portfolio">
-                            View Full Portfolio <ArrowRight className="w-4 h-4 ml-2" />
+                            View All Projects <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </Button>
                 </div>
