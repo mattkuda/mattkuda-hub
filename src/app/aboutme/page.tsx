@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AnimatedEmojiSequence } from "../../components/animated-emoji-sequence";
 
 export default function AboutMe() {
     return (
@@ -30,11 +31,11 @@ export default function AboutMe() {
                         </p>
 
                         <p>
-                            As a developer, I&apos;ve spent years honing my skills in building applications, solving problems, and creating tools that make life easier and more impactful. Some of my projects include TabaFit, a Tabata workout app designed to bring the power of HIIT training to everyone, and various web development experiments that merge functionality with creative design. My approach to coding isn&apos;t just about writing great software—it&apos;s about using technology to make a difference.
+                            As a developer, I've spent years honing my skills in building applications, solving problems, and creating tools that make life easier and more impactful. Some of my projects include TabaFit, a Tabata workout app designed to bring the power of HIIT training to everyone, and various web development experiments that merge functionality with creative design. My approach to coding isn't just about writing great software. It's about using technology to make a difference.
                         </p>
 
                         <p>
-                            But my mission extends beyond just tech. I see a real opportunity to inspire developers to embrace healthier lifestyles. Staying active and fit isn&apos;t just about looking good—it&apos;s about performing at your best, building confidence, and leading a stronger, more balanced life. I believe that when developers prioritize their health, they become sharper problem-solvers, more creative thinkers, and ultimately, better at what they do both in their careers and beyond.
+                            But my mission extends beyond just tech. I see a real opportunity to inspire developers to embrace healthier lifestyles. Staying active and fit enables you to perform at your best, building confidence, and leading a stronger, more balanced life. I believe that when developers prioritize their health, they become sharper problem-solvers, more creative thinkers, and ultimately, better at what they do both in their careers and beyond.
                         </p>
 
                         <p>
@@ -44,6 +45,9 @@ export default function AboutMe() {
                         <p className="text-xl md:text-2xl font-medium text-center italic mt-8">
                             Let&apos;s build something stronger together.
                         </p>
+                        <div className="flex justify-center">
+                            <AnimatedEmojiSequence />
+                        </div>
                     </div>
                 </div>
             </div>
