@@ -5,21 +5,19 @@ export default function AboutMe() {
     return (
         <main className="min-h-screen">
             <div className="container mx-auto max-w-3xl px-4 py-16 md:py-24">
-                <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-transparent bg-clip-text">
+                <h2 className="mb-4 text-center text-3xl font-bold">
                     About Me
-                </h1>
-
-                <div className="mb-12 relative w-full max-w-md mx-auto aspect-square">
+                </h2>
+                <div className="mb-8 relative mx-auto flex justify-center">
                     <Image
                         src="/matt-kuda-gemini.png"
                         alt="Matt Kuda"
-                        width={500}
-                        height={500}
+                        width={300}
+                        height={300}
                         className="rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-300"
                         priority
                     />
                 </div>
-
                 <div className="space-y-6 text-zinc-800">
                     <div className="text-xl md:text-2xl font-medium leading-relaxed">
                         Hi, I&apos;m Matt Kuda. I discovered both coding and weightlifting in high school and they&apos;ve been my two passions ever since.
