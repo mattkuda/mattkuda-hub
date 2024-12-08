@@ -56,7 +56,7 @@ export function PortfolioPreviewSection() {
                 </motion.div>
                 <div className="flex justify-center">
                     <Button asChild variant="outline" className="mt-12">
-                        <Link href="/portfolio">
+                        <Link href="/projects">
                             View All Projects <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </Button>
