@@ -1,4 +1,5 @@
-import { Menu } from 'lucide-react';
+'use client'
+import { Mail, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import {
@@ -6,8 +7,11 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import { useState } from 'react';
+import { ContactModal } from './contact-modal';
 
 const Header = () => {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container  mx-auto max-w-7xl flex h-16 items-center justify-between">
@@ -20,10 +24,14 @@ const Header = () => {
                 <div className="flex items-center">
                     {/* Desktop Navigation */}
                     <nav className="hidden items-center space-x-6 md:flex">
-                        <Link href="/programs" className="text-sm font-medium">Programs</Link>
-                        <Link href="/projects" className="text-sm font-medium">Projects</Link>
-                        <Link href="/aboutme" className="text-sm font-medium">About Me</Link>
-                        <Link href="/content" className="text-sm font-medium">Content</Link>
+                        <Link href="/portfolio" className="text-md font-medium">Portfolio</Link>
+                        <Link href="/programs" className="text-md font-medium">Programs</Link>
+                        <Link href="/aboutme" className="text-md font-medium">About Me</Link>
+                        <Link href="/content" className="text-md font-medium">Content</Link>
+                        <Button onClick={() => setIsContactModalOpen(true)} className="text-sm font-medium">
+                            Contact
+                            <Mail className="h-4 w-4" />
+                        </Button>
                     </nav>
                     {/* Mobile Menu Button */}
                     <Sheet>
@@ -43,6 +51,7 @@ const Header = () => {
                     </Sheet>
                 </div>
             </div>
+            <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
         </header >
     );
 };

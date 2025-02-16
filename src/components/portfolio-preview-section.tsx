@@ -3,14 +3,15 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { PortfolioCard } from "./portfolio-card";
 import { portfolioProjects } from "@/lib/portfolio";
+import { ContactModal } from "./contact-modal";
 
 export function PortfolioPreviewSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "100px" });
-
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -37,10 +38,16 @@ export function PortfolioPreviewSection() {
         <section className="py-12 md:py-24" ref={ref}>
             <div className="container">
                 <h2 className="mb-4 text-center text-3xl font-bold">
-                    Projects
+                    Portfolio
                 </h2>
-                <p className="mb-8 text-lg text-center text-zinc-600">
-                    Applications I&apos;ve built and shipped to the public
+                <p className="text-lg text-center text-muted-foreground mb-8">
+                    Looking to hire me for freelance work?{" "}
+                    <button
+                        onClick={() => setIsContactModalOpen(true)}
+                        className="text-blue-600 hover:text-blue-800 font-medium underline underline-offset-4"
+                    >
+                        Let's chat
+                    </button>
                 </p>
                 <motion.div
                     variants={container}
@@ -56,12 +63,16 @@ export function PortfolioPreviewSection() {
                 </motion.div>
                 <div className="flex justify-center">
                     <Button asChild variant="outline" className="mt-12">
-                        <Link href="/projects">
-                            View All Projects <ArrowRight className="w-4 h-4 ml-2" />
+                        <Link href="/portfolio">
+                            View Full Portfolio <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </Button>
                 </div>
             </div>
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+            />
         </section>
     );
 } 

@@ -13,9 +13,9 @@ export default function HomePage() {
       <main className="min-h-screen">
         <div className="container mx-auto max-w-6xl">
           <HeroSection />
-          <ProgramsSection />
-          <AboutSection />
           <PortfolioPreviewSection />
+          <AboutSection />
+          <ProgramsSection />
           <SocialLinksSection />
           <NewsletterSection />
         </div>
