@@ -33,6 +33,19 @@ export const portfolioProjects = [
         codeUrl: "https://github.com/mattkuda/tabafit",
     },
     {
+        title: "RecruitBase",
+        description: "A platform designed for recruiters to track candidates and manage applications and interviews. Features trello-like boards, candidate profiles, resume analysis, note keeping, and interview scheduling.",
+        image: "/portfolio/recruitbase.png",
+        technologies: [
+            "NextJS",
+            "Supabase",
+            "Stripe",
+            "Clerk",
+            "Vercel"
+        ],
+        demoUrl: "https://recruitbase.vercel.app",
+    },
+    {
         title: "Betcha Sports",
         description: "Social sports betting platform that allows users to create and participate in friendly wagers with their friends. Features real-time odds updates, live game tracking, and social interaction features.",
         image: "/portfolio/betcha.png",
