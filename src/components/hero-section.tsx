@@ -24,7 +24,7 @@ const HeroSection = () => {
         <section className="container mx-auto px-4 py-8 md:py-16 flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0 p-4">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-transparent bg-clip-text">
-                    Hi, I'm Matt Kuda —
+                    Hi, I'm Matt
                 </h1>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-2">
                     The Healthy Dev

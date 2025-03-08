@@ -20,7 +20,7 @@ export default function AboutMe() {
                 </div>
                 <div className="space-y-6 text-zinc-800">
                     <div className="text-xl md:text-2xl font-medium leading-relaxed">
-                        Hi, I&apos;m Matt Kuda. I discovered both coding and weightlifting in high school and they&apos;ve been my two passions ever since.
+                        Hi, I&apos;m Matt. I discovered both coding and fitness in high school and they&apos;ve been my two passions ever since.
                     </div>
 
                     <div className="space-y-6 text-lg leading-relaxed">
