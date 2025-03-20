@@ -6,6 +6,7 @@ import NewsletterSection from "@/components/newsletter-section";
 import AboutSection from "../components/about-section";
 import SocialLinksSection from "../components/social-links-sections";
 import { PortfolioPreviewSection } from "../components/portfolio-preview-section";
+import YouTubeVideoSection from "@/components/youtube-video-section";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,10 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <HeroSection />
           <PortfolioPreviewSection />
+          <YouTubeVideoSection
+            title="Check out my latest content on YouTube:"
+            className="pt-8"
+          />
           <AboutSection />
           <ProgramsSection />
           <SocialLinksSection />
