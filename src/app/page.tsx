@@ -16,7 +16,7 @@ export default function HomePage() {
           <HeroSection />
           <PortfolioPreviewSection />
           <YouTubeVideoSection
-            title="Check out my latest content on YouTube:"
+            title="Latest YouTube Video"
             className="pt-8"
           />
           <AboutSection />

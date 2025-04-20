@@ -21,15 +21,6 @@ const SocialLinksSection = () => {
                     </defs>
                 </svg>
                 {/* Icons */}
-                <Link href="https://tiktok.com/@mattkuda" target="_blank" rel="noopener noreferrer" className="relative z-10">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        className="h-10 w-10 fill-current"
-                    >
-                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
-                    </svg>
-                </Link>
                 <Link href="https://twitter.com/mattkuda" target="_blank" rel="noopener noreferrer" className="relative z-10">
                     <svg
                         className="h-10 w-10 fill-current"
@@ -37,6 +28,15 @@ const SocialLinksSection = () => {
                         viewBox="0 0 512 462.799"
                     >
                         <path fill-rule="nonzero" d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
+                    </svg>
+                </Link>
+                <Link href="https://tiktok.com/@mattkuda" target="_blank" rel="noopener noreferrer" className="relative z-10">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        className="h-10 w-10 fill-current"
+                    >
+                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
                     </svg>
                 </Link>
                 <Link href="https://youtube.com/@matt_kuda" target="_blank" rel="noopener noreferrer" className="relative z-10">
