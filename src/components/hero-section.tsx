@@ -3,12 +3,19 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 import { AnimatedEmojiSequence } from './animated-emoji-sequence';
 
 
 const HeroSection = () => {
     const [email, setEmail] = useState('');
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -71,7 +78,7 @@ const HeroSection = () => {
                     {/* Image container */}
                     <div className="relative rounded-lg overflow-hidden">
                         <Image
-                            src="/matt-kuda-gemini.png"
+                            src={mounted && theme === 'dark' ? '/mattkuda-gradient2.png' : '/matt-kuda-gemini.png'}
                             alt="Matt Kuda"
                             width={500}
                             height={500}
