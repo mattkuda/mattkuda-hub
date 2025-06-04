@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/sheet"
 import { useState } from 'react';
 import { ContactModal } from './contact-modal';
+import { ThemeToggle } from './theme-toggle';
 
 const Header = () => {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -32,6 +33,7 @@ const Header = () => {
                             Contact
                             <Mail className="h-4 w-4" />
                         </Button>
+                        <ThemeToggle />
                     </nav>
                     {/* Mobile Menu Button */}
                     <Sheet>
@@ -46,6 +48,7 @@ const Header = () => {
                                 <Link href="/portfolio" className="text-lg font-semibold">Projects</Link>
                                 <Link href="/aboutme" className="text-lg font-semibold">About Me</Link>
                                 <Link href="/content" className="text-lg font-semibold">Content</Link>
+                                <ThemeToggle />
                             </nav>
                         </SheetContent>
                     </Sheet>
