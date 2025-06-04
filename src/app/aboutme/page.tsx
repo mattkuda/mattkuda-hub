@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AnimatedEmojiSequence } from "../../components/animated-emoji-sequence";
+import YouTubeVideoSection from "@/components/youtube-video-section";
 
 export default function AboutMe() {
     return (
@@ -39,6 +40,12 @@ export default function AboutMe() {
                         <p>
                             Looking ahead, my goal is to continue creating tools and content that bridge the worlds of tech and fitness. I&apos;m building a community of like-minded developers and enthusiasts who want to live healthier, purpose-driven lives. Whether it&apos;s crafting more innovative apps, sharing fitness resources, or documenting my journey through projects and content, I&apos;m focused on pushing boundaries and helping others unlock their potential.
                         </p>
+
+                        <YouTubeVideoSection
+                            title="My Story as a Developer"
+                            videoId="tmuXhWPLXOI"
+                            className="pt-4"
+                        />
 
                         <p className="text-xl md:text-2xl font-medium text-center italic mt-8">
                             Let&apos;s build something stronger together.
