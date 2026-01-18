@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/sheet"
 import { useState } from 'react';
 import { ContactModal } from './contact-modal';
+import { ThemeToggle } from './theme-toggle';
 
 const Header = () => {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -32,14 +33,17 @@ const Header = () => {
                             Contact
                             <Mail className="h-4 w-4" />
                         </Button>
+                        <ThemeToggle />
                     </nav>
-                    {/* Mobile Menu Button */}
-                    <Sheet>
-                        <SheetTrigger asChild>
-                            <Button variant="ghost" className="ml-4 md:hidden" aria-label="Open menu">
-                                <Menu className="h-6 w-6" />
-                            </Button>
-                        </SheetTrigger>
+                    {/* Mobile Theme Toggle & Menu Button */}
+                    <div className="flex items-center md:hidden">
+                        <ThemeToggle />
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <Button variant="ghost" className="ml-2" aria-label="Open menu">
+                                    <Menu className="h-6 w-6" />
+                                </Button>
+                            </SheetTrigger>
                         <SheetContent side="right">
                             <nav className="flex flex-col gap-4">
                                 <Link href="/programs" className="text-lg font-semibold">Programs</Link>
@@ -48,7 +52,8 @@ const Header = () => {
                                 <Link href="/content" className="text-lg font-semibold">Content</Link>
                             </nav>
                         </SheetContent>
-                    </Sheet>
+                        </Sheet>
+                    </div>
                 </div>
             </div>
             <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />

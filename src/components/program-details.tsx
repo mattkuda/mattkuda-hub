@@ -20,7 +20,7 @@ export function ProgramDetails({ program }: ProgramDetailsProps) {
     };
 
     return (
-        <div className="min-h-screen bg-zinc-100 py-12">
+        <div className="min-h-screen bg-background py-12">
             <div className="container">
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* Left Column - Image */}
@@ -49,11 +49,11 @@ export function ProgramDetails({ program }: ProgramDetailsProps) {
 
                         <div className="text-2xl font-bold">${program.price}</div>
 
-                        <p className="text-lg text-zinc-600">
+                        <p className="text-lg text-muted-foreground">
                             {program.description}
                         </p>
 
-                        <div className="rounded-md bg-zinc-200 p-4">
+                        <div className="rounded-md bg-secondary p-4">
                             <h3 className="font-semibold">Difficulty Level</h3>
                             <p>{program.difficulty}</p>
                         </div>

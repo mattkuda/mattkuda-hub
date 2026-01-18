@@ -3,40 +3,40 @@ import { Twitter, Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
     return (
-        <footer className="border-t py-6 bg-zinc-50">
+        <footer className="border-t py-6 bg-secondary">
             <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-                <p className="text-center text-sm leading-loose text-zinc-600">
+                <p className="text-center text-sm leading-loose text-muted-foreground">
                     © 2024 Matt Kuda. All rights reserved.
                 </p>
                 <div className="flex items-center gap-6">
                     {/* Legal Links */}
                     <nav className="flex gap-4">
-                        <Link href="#" className="text-sm text-zinc-600 underline-offset-4 hover:underline">
+                        <Link href="#" className="text-sm text-muted-foreground underline-offset-4 hover:underline hover:text-foreground">
                             Terms
                         </Link>
-                        <Link href="#" className="text-sm text-zinc-600 underline-offset-4 hover:underline">
+                        <Link href="#" className="text-sm text-muted-foreground underline-offset-4 hover:underline hover:text-foreground">
                             Privacy
                         </Link>
-                        <Link href="#" className="text-sm text-zinc-600 underline-offset-4 hover:underline">
+                        <Link href="#" className="text-sm text-muted-foreground underline-offset-4 hover:underline hover:text-foreground">
                             Contact
                         </Link>
                     </nav>
                     {/* Social Media Icons */}
-                    <div className="flex items-center gap-4 border-l border-zinc-200 pl-6">
+                    <div className="flex items-center gap-4 border-l border-border pl-6">
                         <Link href="https://twitter.com/mattkuda" target="_blank" rel="noopener noreferrer"
-                            className="text-zinc-600 hover:text-zinc-900 transition-colors">
+                            className="text-muted-foreground hover:text-foreground transition-colors">
                             <Twitter className="h-5 w-5" />
                         </Link>
                         <Link href="https://instagram.com/mattkuda" target="_blank" rel="noopener noreferrer"
-                            className="text-zinc-600 hover:text-zinc-900 transition-colors">
+                            className="text-muted-foreground hover:text-foreground transition-colors">
                             <Instagram className="h-5 w-5" />
                         </Link>
                         <Link href="https://linkedin.com/in/mattkuda" target="_blank" rel="noopener noreferrer"
-                            className="text-zinc-600 hover:text-zinc-900 transition-colors">
+                            className="text-muted-foreground hover:text-foreground transition-colors">
                             <Linkedin className="h-5 w-5" />
                         </Link>
                         <Link href="https://tiktok.com/@mattkuda" target="_blank" rel="noopener noreferrer"
-                            className="text-zinc-600 hover:text-zinc-900 transition-colors">
+                            className="text-muted-foreground hover:text-foreground transition-colors">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 448 512"

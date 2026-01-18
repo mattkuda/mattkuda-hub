@@ -76,7 +76,7 @@ export function FreeProgramModal({ program, isOpen, onClose }: FreeProgramModalP
                         <h2 className="text-xl font-bold text-center mb-2">
                             Check your inbox!
                         </h2>
-                        <p className="text-zinc-600 text-center mb-6">
+                        <p className="text-muted-foreground text-center mb-6">
                             Your free program will arrive shortly after confirming your subscription.
                         </p>
                         <Button

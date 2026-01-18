@@ -82,7 +82,7 @@ export function PortfolioCard({ title, videoUrl, description, image, demoUrl, co
                     {technologies.map((tech) => (
                         <span
                             key={tech}
-                            className="px-3 py-1 bg-zinc-200 rounded-full text-sm text-zinc-800"
+                            className="px-3 py-1 bg-secondary rounded-full text-sm text-secondary-foreground"
                         >
                             {tech}
                         </span>
