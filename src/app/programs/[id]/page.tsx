@@ -30,7 +30,7 @@ export default function ProgramPage({ params }: Props) {
     };
 
     return (
-        <main className="min-h-screen bg-zinc-100 p-4">
+        <main className="min-h-screen bg-background p-4">
             <div className="container mx-auto max-w-7xl">
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* Left Column - Image */}
@@ -59,11 +59,11 @@ export default function ProgramPage({ params }: Props) {
 
                         <div className="text-2xl font-bold">${program.price}</div>
 
-                        <p className="text-lg text-zinc-600">
+                        <p className="text-lg text-muted-foreground">
                             {program.description}
                         </p>
 
-                        <div className="rounded-md bg-zinc-200 p-4">
+                        <div className="rounded-md bg-secondary p-4">
                             <h3 className="font-semibold">Difficulty Level</h3>
                             <p>{program.difficulty}</p>
                         </div>

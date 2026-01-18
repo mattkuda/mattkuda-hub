@@ -23,7 +23,7 @@ export default function NewsletterSection() {
             <div className="container">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="mb-4 text-3xl font-bold">Stay Updated</h2>
-                    <p className="mb-8 text-zinc-600">
+                    <p className="mb-8 text-muted-foreground">
                         Sign up for my newsletter to receive tech news, fitness tips, and the content I find most interesting each week.
                     </p>
 

@@ -19,7 +19,7 @@ export default function AboutMe() {
                         priority
                     />
                 </div>
-                <div className="space-y-6 text-zinc-800">
+                <div className="space-y-6 text-foreground">
                     <div className="text-xl md:text-2xl font-medium leading-relaxed">
                         Hi, I&apos;m Matt. I discovered both coding and fitness in high school and they&apos;ve been my two passions ever since.
                     </div>

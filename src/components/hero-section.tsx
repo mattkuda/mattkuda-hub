@@ -41,7 +41,7 @@ const HeroSection = () => {
                         placeholder="Your email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="h-12 text-lg placeholder:text-lg px-6 bg-white"
+                        className="h-12 text-lg placeholder:text-lg px-6 bg-background"
                     />
                     <div className="relative group">
                         <div className="absolute inset-0 bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] rounded-md opacity-100 group-hover:opacity-0 transition-opacity duration-300" />

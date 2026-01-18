@@ -9,7 +9,7 @@ export default function ProgramsPage() {
                 <h2 className="mb-4 text-center text-3xl font-bold">
                     Programs
                 </h2>
-                <p className="mb-8 text-lg text-center text-zinc-600">
+                <p className="mb-8 text-lg text-center text-muted-foreground">
                     Transform your fitness journey with my hand-crafted training programs
                 </p>
                 <div className="grid gap-6 grid-cols-2">
