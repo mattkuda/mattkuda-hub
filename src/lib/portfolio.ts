@@ -12,6 +12,20 @@ export interface PortfolioProject {
 
 export const portfolioProjects: PortfolioProject[] = [
     {
+        title: "EVEX",
+        description: "Your AI personal trainer on your phone. EVEX is a mobile app for generating personalized workout plans and tracking progress to see real results.",
+        image: "/portfolio/evex.png",
+        demoUrl: "https://evex.app",
+        technologies: [
+            "Swift",
+            "Node.js",
+            "Supabase",
+            "OpenAi"
+        ],
+        videoUrl: "https://www.youtube.com/shorts/D-Khjeua1q8",
+        year: 2026,
+    },
+    {
         title: "FlowThread",
         description: "An AI-powered SaaS platform that streamlines communication workflows. Features include AI-assisted thread replies, documentation generation, ticket creation, and tone conversion. Built with a focus on developer experience and team collaboration.",
         image: "/portfolio/flowthread.png",
