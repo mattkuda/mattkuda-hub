@@ -29,6 +29,7 @@ const Header = () => {
                         <Link href="/programs" className="text-md font-medium">Programs</Link>
                         <Link href="/aboutme" className="text-md font-medium">About Me</Link>
                         <Link href="/content" className="text-md font-medium">Content</Link>
+                        <Link href="/chat" className="text-md font-medium">Chat with Matt</Link>
                         <Button onClick={() => setIsContactModalOpen(true)} className="text-sm font-medium">
                             Contact
                             <Mail className="h-4 w-4" />
@@ -50,6 +51,7 @@ const Header = () => {
                                 <Link href="/portfolio" className="text-lg font-semibold">Projects</Link>
                                 <Link href="/aboutme" className="text-lg font-semibold">About Me</Link>
                                 <Link href="/content" className="text-lg font-semibold">Content</Link>
+                                <Link href="/chat" className="text-lg font-semibold">Chat with Matt</Link>
                             </nav>
                         </SheetContent>
                         </Sheet>
