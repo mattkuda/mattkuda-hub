@@ -11,7 +11,7 @@ export default function AboutMe() {
                 </h2>
                 <div className="mb-8 relative mx-auto flex justify-center">
                     <Image
-                        src="/matt-kuda-gemini.png"
+                        src="/matt-kuda-pic.png"
                         alt="Matt Kuda"
                         width={300}
                         height={300}

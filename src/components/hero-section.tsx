@@ -71,7 +71,7 @@ const HeroSection = () => {
                     {/* Image container */}
                     <div className="relative rounded-lg overflow-hidden">
                         <Image
-                            src="/matt-kuda-gemini.png"
+                            src="/matt-kuda-pic.png"
                             alt="Matt Kuda"
                             width={500}
                             height={500}
